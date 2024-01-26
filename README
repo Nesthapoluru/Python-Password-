@@ -1,0 +1,58 @@
+import random
+import string
+
+def generate_password(length=12):
+    # Combine uppercase letters, lowercase letters, digits, and symbols
+    characters = string.ascii_letters + string.digits + string.punctuation
+    
+    # Ensure at least one character from each category
+    password = random.choice(string.ascii_uppercase)
+    password += random.choice(string.ascii_lowercase)
+    password += random.choice(string.digits)
+    password += random.choice(string.punctuation)
+
+    # Fill the remaining length with random characters
+    for _ in range(length - 4):
+        password += random.choice(characters)
+
+    # Shuffle the password to make it more random
+    password_list = list(password)
+    random.shuffle(password_list)
+    password = ''.join(password_list)
+
+    return password
+
+if __name__ == "__main__":
+    password_length = int(input("Enter the desired length for the password: "))
+    generated_password = generate_password(password_length)
+    
+    print(f"Generated Password: {generated_password}")
+import random
+import string
+
+def generate_password(length=12):
+    # Combine uppercase letters, lowercase letters, digits, and symbols
+    characters = string.ascii_letters + string.digits + string.punctuation
+    
+    # Ensure at least one character from each category
+    password = random.choice(string.ascii_uppercase)
+    password += random.choice(string.ascii_lowercase)
+    password += random.choice(string.digits)
+    password += random.choice(string.punctuation)
+
+    # Fill the remaining length with random characters
+    for _ in range(length - 4):
+        password += random.choice(characters)
+
+    # Shuffle the password to make it more random
+    password_list = list(password)
+    random.shuffle(password_list)
+    password = ''.join(password_list)
+
+    return password
+
+if __name__ == "__main__":
+    password_length = int(input("Enter the desired length for the password: "))
+    generated_password = generate_password(password_length)
+    
+    print(f"Generated Password: {generated_password}")
